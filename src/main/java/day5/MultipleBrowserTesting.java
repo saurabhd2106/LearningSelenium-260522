@@ -14,7 +14,7 @@ public class MultipleBrowserTesting {
 
 	WebDriver driver;
 
-	public void openBrowser(String browserType) {
+	public void openBrowser(String browserType) throws Exception {
 		
 		if(browserType.equalsIgnoreCase("chrome")) {
 			
@@ -42,7 +42,8 @@ public class MultipleBrowserTesting {
 			driver = new FirefoxDriver();
 			
 		} else {
-			System.err.println("Invalid browser");
+			
+			throw new Exception("Invalid Browser Type " + browserType);
 		}
 
 		
